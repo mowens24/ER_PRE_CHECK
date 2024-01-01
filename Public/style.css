@@ -1,0 +1,281 @@
+:root {
+  --main-bg-color: #f4f4f4;
+  --main-text-color: #333;
+  --header-footer-bg-color: #007bff;
+  --header-footer-text-color: white;
+  --button-bg-color: #28a745;
+  --button-hover-bg-color: #218838;
+  --input-bg-color: white;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+}
+
+.theme-switch {
+  text-align: right;
+  padding: 10px;
+}
+
+header,
+footer {
+  background-color: var(--header-footer-bg-color);
+  color: var(--header-footer-text-color);
+  text-align: center;
+  padding: 1em 0;
+}
+
+.form-section {
+  background-color: var(--input-bg-color);
+  padding: 1em;
+  margin: 1em;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 15px;
+  /* Increased padding for larger touch area */
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1em;
+  /* Increased font size for better readability */
+}
+
+input[type="range"] {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  padding: 20px;
+  /* Increased padding for a larger button */
+  background-color: var(--button-bg-color);
+  /* Ensure the button is green */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  /* Increased font size for better readability */
+}
+
+button:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.dark-mode {
+  --main-bg-color: #333;
+  --main-text-color: #f4f4f4;
+  --input-bg-color: #555;
+  --header-footer-bg-color: #0066cc;
+  --button-bg-color: #218838;
+  /* Ensure hover state is also green */
+  --button-hover-bg-color: #1e7c31;
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.category input[type="checkbox"] {
+  transform: scale(1.5);
+  /* Make checkboxes larger */
+  margin-right: 15px;
+}
+
+.category label {
+  font-size: 1.5em;
+  /* Increase font size for better readability */
+}
+
+#login-button {
+  float: right;
+  margin-right: 10px;
+  background-color: #4CAF50;
+  /* This should be green, not grey */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 20px 20px;
+  /* Increased padding for a larger button */
+  cursor: pointer;
+}
+
+#login-button:hover {
+  background-color: #45a049;
+}
+
+@media screen and (max-width: 600px) {
+
+  .theme-switch,
+  header,
+  footer,
+  .form-section,
+  #login-button,
+  button {
+    padding: 15px;
+  }
+
+  .category label {
+    font-size: 1.2em;
+    /* Slightly reduce the font size on very small screens */
+  }
+
+  input[type="checkbox"] {
+    /* Adjustments for mobile already made above */
+  }
+
+  input[type="range"] {
+    /* Mobile adjustments can be fine-tuned if necessary */
+  }
+
+  button {
+    font-size: 1.2em;
+    /* Ensure the button text is large enough on mobile */
+    padding: 15px 20px;
+    /* Adjust padding if necessary for smaller screens */
+  }
+}
+
+/* Toggle switch style */
+.toggle-label {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-checkbox {
+  display: none;
+}
+
+.toggle-slider {
+  width: 50px;
+  height: 25px;
+  background-color: #ccc;
+  position: relative;
+  display: inline-block;
+  border-radius: 25px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.toggle-slider::after {
+  content: '';
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.toggle-checkbox:checked+.toggle-slider {
+  background-color: #66bb6a;
+}
+
+.toggle-checkbox:checked+.toggle-slider::after {
+  transform: translateX(24px);
+}
+
+/* Responsive design for mobile devices */
+@media screen and (max-width: 600px) {
+  /* Already covered above */
+}
+
+.login-container,
+.settings-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+nav .settings-link {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: var(--button-bg-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+nav .settings-link:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+#loading-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
+
+/* Loading Screen Styles */
+#loading-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+#loading-screen p {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

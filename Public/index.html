@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ER Pre-Check-In App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Temporary Navigation Links for Testing -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="loading.html">Loading</a></li>
+      </ul>
+    </nav>
+
+    <div class="theme-switch-wrapper">
+      <label for="dark-mode-toggle" class="theme-switch">
+        Dark Mode:
+        <input type="checkbox" id="dark-mode-toggle" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <header>
+      <h1>Emergency Room Pre-Check-In</h1>
+    </header>
+    <main>
+      <form id="pre-checkin-form">
+        <section class="form-section" id="symptom-checklist">
+          <h2>Select Your Symptoms</h2>
+          <div class="symptom-item">
+            <input
+              type="checkbox"
+              id="chestPain"
+              name="Symptoms"
+              value="chestPain"
+            />
+            <label for="chestPain">Chest Pain</label>
+          </div>
+          <div class="symptom-item">
+            <input
+              type="checkbox"
+              id="difficultyBreathing"
+              name="Symptoms"
+              value="difficultyBreathing"
+            />
+            <label for="difficultyBreathing">Difficulty Breathing</label>
+          </div>
+          <!-- Repeat for each symptom -->
+          <div class="symptom-item">
+            <input
+              type="checkbox"
+              id="poisoning"
+              name="Symptoms"
+              value="poisoning"
+            />
+            <label for="poisoning">Poisoning or Overdose</label>
+          </div>
+          <div class="symptom-item">
+            <input type="checkbox" id="other" name="Symptoms" value="other" />
+            <label for="other">Other</label>
+          </div>
+          <div id="other-symptom-details" class="hidden">
+            <label for="otherDetails">Please specify:</label>
+            <textarea id="otherDetails" name="otherDetails"></textarea>
+          </div>
+        </section>
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+    <footer>
+      <p>For emergencies, call <a href="tel:911">911</a></p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
